@@ -73,38 +73,33 @@ Ticket.prototype.totalPrice = function(){
 $(document).ready(function() {
   $("form#ticketForm").submit(function(event) {
     event.preventDefault();
-
+//INPUT OF FORMS
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
+    var inputtedTickets = parseInt($("input#numberofTickets").val());
 
     var newCustomer = new Customer(inputtedFirstName, inputtedLastName);
-
-    var inputtedTickets = parseInt($("input#numberofTickets").val());
-    var inputtedMovie = $("#movie").val();
-    var inputtedTime = $("#time").val();
-    var inputtedAge = $("#age").val();
-
-    var newTickets = new Ticket(inputtedMovie,inputtedTime,inputtedTickets, inputtedAge);
-
-
+//OUTPUT OF FORMS
     $("ul#customerName").append("<li><span class='contact'>" + newCustomer.fullName() + "</span></li>");
 
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
     $("input#numberofTickets").val("");
+//INPUT OF SELECTORS
+    var inputtedMovie = $("#movie").val();
+    var inputtedTime = $("#time").val();
+    var inputtedAge = $("#age").val();
 
-
+    var newTickets = new Ticket(inputtedMovie,inputtedTime,inputtedTickets, inputtedAge);
+//OUTPUT OF SELECTORS
     $(".contact").last().click(function() {
       $("h3").empty();
       $("h3").append(newTickets.fullTicket()+" "+'$'+newTickets.totalPrice());
       $("#show-ticket").show();
-      $("#show-ticket h2").text(newCustomer.firstName);
+      $("#show-ticket h2").text(newCustomer.fullName());
       $(".first-name").text(newCustomer.firstName);
       $(".last-name").text(newCustomer.lastName);
       $(".numberofTickets").text(inputtedTickets);
-
-
-
 
     });
   });
