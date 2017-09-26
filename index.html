@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Movie Tickets</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Movie Tickets</h1>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Select your options</h2>
+          <form id="ticketForm">
+            <div class="form-group">
+              <label for="new-first-name">First name</label>
+              <input type="text" class="form-control" id="new-first-name">
+            </div>
+            <div class="form-group">
+              <label for="new-last-name">Last name</label>
+              <input type="text" class="form-control" id="new-last-name">
+            </div>
+            <p>Age</p>
+            <select class="form-control" id="age">
+              <option value="1"><18</option>
+              <option value="2">>60</option>
+            </select>
+
+            <div id="new-tickets">
+              <div class="new-tickets">
+                <select class="form-control" id="movie">
+                  <option value="1">New Movie</option>
+                  <option value="2">Old Movie</option>
+                </select>
+                <select class="form-control" id="time">
+                  <option value="1">Before 5pm</option>
+                  <option value="2">After 5pm</option>
+                </select>
+                <div class="form-group">
+                  <label for="numberofTickets">Number of Tickets</label>
+                  <input type="text" class="form-control" id="numberofTickets">
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn">Show ticket and pricing</button>
+          </form>
+
+          <h2>Customer Information:</h2>
+          <ul id="customerName">
+
+          </ul>
+        </div>
+          <div id="show-ticket">
+            <h2>Customer's Orders</h2>
+
+            <p>First name: <span class="first-name"></span></p>
+            <p>Last name: <span class="last-name"></span></p>
+            <p>Number of Tickets: <span class="numberofTickets"></span></p>
+            <h3>Order:</h3>
+
+
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
